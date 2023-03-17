@@ -1,0 +1,29 @@
+.textfields{
+    margin-top: 20px;
+    text-align: center;
+    justify-content:center;
+        background-color: rgb(237, 243, 238);
+        border-radius: 8px;
+        width: 550px;
+        margin-left: 1%;
+        padding: 30px;
+}
+
+.Moviename,.Actor,.Actress,.Director,.Duration,.Category,.Language{
+    padding-bottom: 8px;
+    color:white
+}
+
+.addbutton{
+    margin-left: 20px;
+}
+
+.addbody{
+    background: #bdc3c7;  
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }

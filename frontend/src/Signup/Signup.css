@@ -1,0 +1,70 @@
+.signupbody{
+    text-align: center;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .labelsignup{
+    display: block;
+    font-size: larger;
+    color: white;
+    padding: 10px;
+    text-align: 10%;
+    }
+
+    .labels{
+        color:white;
+    }
+    
+    .input{
+    font-size: larger;
+    padding: 5px;
+    margin: 2px;
+    
+    }
+    .btnsignup{
+    color: white;
+    background-color: blueviolet;
+    border-radius: 9px;
+    font-size: larger;
+    display: block;
+    padding: 7px;
+    margin: 15px auto;
+    }
+    
+    /* .messages{
+    display: flex;
+    justify-content: center;
+    } */
+    
+    /* .error{
+    display: block;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    }
+    
+    .success{
+    display: block;
+    background-color: lightblue;
+    color: black;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    } */
+
+    .formsignup{
+        background-color: rgba(23, 23, 54, 0.555);
+        border-radius: 8px;
+        width: 550px;
+        margin: 20px auto;
+        padding: 30px;
+       
+    }
