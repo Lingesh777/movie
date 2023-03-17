@@ -73,7 +73,7 @@ const Addreview =() =>{
             </div>
             </td>
             <td>
-            <div className='removeicon' onClick={()=> deleteMovie(movie.moviename)}>
+            <div className='removeicons' onClick={()=> deleteMovie(movie.moviename)}>
               <RemoveCircleOutlineIcon />
             </div>
             </td>
