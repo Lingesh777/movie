@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 public class MovieEntity {
 	@Id
 	private String moviename;
+	private String url;
 	private String director;
 	private String actor;
 	private String actress;
@@ -59,16 +60,23 @@ public class MovieEntity {
 	public void setDirector(String director) {
 		this.director = director;
 	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	public String getReleasedate() {
 		return releasedate;
 	}
 	public void setReleasedate(String releasedate) {
 		this.releasedate = releasedate;
 	}
-	public MovieEntity(String moviename, String director, String actor, String actress, String category,
+	public MovieEntity(String moviename, String url,String director, String actor, String actress, String category,
 			String duration, String releasedate, String language) {
 		super();
 		this.moviename = moviename;
+		this.url=url;
 		this.director = director;
 		this.actor = actor;
 		this.actress = actress;

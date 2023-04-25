@@ -9,7 +9,7 @@
         padding: 30px;
 }
 
-.Moviename,.Actor,.Actress,.Director,.Duration,.Category,.Language{
+.url,.Moviename,.Actor,.Actress,.Director,.Duration,.Category,.Language{
     padding-bottom: 8px;
     color:white
 }

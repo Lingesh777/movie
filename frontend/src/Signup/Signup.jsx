@@ -45,6 +45,7 @@ export default function Signup() {
       toast.error("Enter all fields");
     } 
     else {
+     
       axios
         .post("http://localhost:8080/postsignup", {
           username: name,

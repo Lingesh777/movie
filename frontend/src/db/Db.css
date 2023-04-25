@@ -8,10 +8,13 @@
     justify-content: center;
 } */
 
+
+
 .table{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .table td{
@@ -33,14 +36,11 @@
 .editicon{
     color: rgb(245, 241, 241)
 }
-.removeicon{
-    color:red
-}
 
-.removeicon,.editicon {
+.removeicons,.editicon {
     cursor:pointer;
 }
-.removeicon:hover{
+.removeicons:hover{
     background-color: gray;
 }
 .editicon:hover{
@@ -68,17 +68,47 @@
 .reviewicon:hover{
     transform: scale(1.1);
 } */
-
+.movie-img{
+    height: 340px;
+    width: 470px;
+}
 .reviewbutton{
     padding-top: 5px;
     margin-left: 70%;
 }
 
-.tablebody{
+/* .tablebody{
     background-color: gray;
     height:100vh;
     width: 100vw;
+} */
+.removeicons{
+    color:red;
+    /* border:1px solid white; */
+    width:30px;
+    float: right;
+    margin-top:-30px;
+    margin-left:60px
 }
 .editicon{
     margin-right: 10px;
+    /* border:1px solid white; */
+    width:30px;
+    margin-top:-20px;
+    margin-left:140px
+}
+
+.moviebox{
+    height:340px;
+    width: 60%;
+    background-color: black;
+    margin: 4px;
+}
+.moviedatas{
+    float: right;
+    width: 250px;
+    margin-right: 60px;
+    color: aqua;
+    margin-top: 25px;
+    font-size: large;
 }

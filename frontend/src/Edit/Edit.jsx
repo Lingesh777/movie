@@ -8,6 +8,7 @@ import Button from "@mui/material/Button"
 import './Edit.css'
 function Edit(){
      const navigate=useNavigate();
+     const[url,setUrl]=useState("");
     const[moviename,setMoviename]=useState("");
     const[actor,setActor]=useState("");
     const[actress,setActress]=useState("");
@@ -17,6 +18,7 @@ function Edit(){
     const[language,setLanguage]=useState("");
     const {editMovie,getAllMovies} =useStates();
     useEffect(()=>{
+        setUrl(editMovie?.url);
         setMoviename(editMovie?.moviename);
         setActor(editMovie?.actor);
         setActress(editMovie?.actress);
@@ -27,6 +29,7 @@ function Edit(){
     },[editMovie]);
     const Moviedetails=(moviename)=>{
         axios.put(`http://localhost:8080/updatemovie/${moviename}`,{
+            url:url,
             moviename:moviename,
             actor:actor,
             actress:actress,
@@ -49,6 +52,15 @@ function Edit(){
     return(
         <div className='editbody'>
         <div className="textfields">
+        <div className="url">
+                <TextField
+                    onChange={(e)=>setUrl(e.target.value)}
+                    value={url}
+                    id='outlined-basic'
+                    label='Image url'
+                    variant='outlined'
+                />
+            </div>
             <div className="Moviename">
                 <TextField
                     onChange={(e)=>setMoviename(e.target.value)}

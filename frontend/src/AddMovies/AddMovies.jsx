@@ -11,6 +11,7 @@ import './AddMovies.css';
 
  function AddMovies(){
 const navigate=useNavigate();
+    const[url,setUrl]=useState("");
     const[moviename,setMoviename]=useState("");
     const[actor,setActor]=useState("");
     const[actress,setActress]=useState("");
@@ -20,7 +21,15 @@ const navigate=useNavigate();
     const[language,setLanguage]=useState("");
     const {editMovie,getAllMovies} =useStates();
     const AddMoviedetails=()=>{
-        axios.post("http://localhost:8080/postmovie",{
+        
+        if(moviename===''||actor===''||actress===''||director===''||duration===''||category===''||language==='')
+        {
+            toast.error("Enter all fields");
+        }
+        else
+        {
+            axios.post("http://localhost:8080/postmovie",{
+            url:url,
             moviename:moviename,
             actor:actor,
             actress:actress,
@@ -32,13 +41,7 @@ const navigate=useNavigate();
         .then((res)=>{
             console.log(res);
         });
-        if(moviename===''||actor===''||actress===''||director===''||duration===''||category===''||language==='')
-        {
-            toast.error("Enter all fields");
-        }
-        else
-        {
-            getAllMovies()
+            getAllMovies();
             navigate("/movie");
         }
     };
@@ -50,7 +53,7 @@ const navigate=useNavigate();
         <div className='addbody'>
         <ToastContainer
           position="top-center"
-          autoClose={3000}
+          autoClose={1000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -61,6 +64,15 @@ const navigate=useNavigate();
           theme="dark"
         />
         <div className='textfields'>
+        <div className="url">
+                <TextField
+                    onChange={(e)=>setUrl(e.target.value)}
+                    value={url}
+                    id='outlined-basic'
+                    label='Image url'
+                    variant='outlined'
+                />
+            </div>
             <div className="Moviename">
                 <TextField
                     onChange={(e)=>setMoviename(e.target.value)}

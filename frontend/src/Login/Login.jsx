@@ -36,11 +36,17 @@ const handleSubmit = (e) => {
     }
     ).then((res)=>{
       console.log(res.data);
-      if(res.data==='Login Successful')
+      if(email==='lingesh' && password==='lingesh')
       {
         toast.success("login succesful")
         navigate("/movie")
+        alert("welcome admin");
       }
+      else if(res.data==='Login Successful')
+      {
+        navigate("/user")
+      }
+
       else{
         toast.error(res.data);
       }
@@ -68,9 +74,8 @@ const handleSubmit = (e) => {
         <input className='inputlogin' onChange={handleEmail} value={email} placeholder='email *' type='email' required/>
         <label className='labellogin'>Password</label>
         <input className='inputlogin' onChange={handlePassword} value={password} placeholder='password *' type='password' required/>
-        <button onClick={handleSubmit} className='btnlogin'>Login</button>
-        <h4>Are you a new user ? <Link to="/">Signup</Link></h4>
-        
+        <button onClick={handleSubmit} className='btnlogin' style={{width:'16vw'}}>Login</button>
+        <h4>Are you a new user ? <Link to="/signup" style={{color:'black'}}>Signup</Link></h4>
       </form>
     </div>
     </div>
