@@ -10,4 +10,5 @@ public interface MovieServiceInt {
 	public String postDetails(MovieEntity me);
 	public String deleteDetails(String moviename);
 	public String updateDetails(MovieEntity me);
+
 }

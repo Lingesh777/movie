@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import "./Db.css";
+ import "./Tamil.css";
 import {AppBar,Toolbar,Button,Stack,Icon,Typography,} from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -8,9 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import HomeIcon from '@mui/icons-material/Home';
 
 
-export const UserDb = () => {
+export const Tamil = () => {
   const { editMovie, setEditMovie, movies, setMovies, getAllMovies } =
     useStates();
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export const UserDb = () => {
   const Logout = () => {
     navigate("/login");
   };
+
   const tamil = () => {
     navigate("/tamilmovies");
   };
@@ -34,6 +36,9 @@ export const UserDb = () => {
   };
   const malayalam = () => {
     navigate("/malayalammovies");
+  };
+  const Home =()=>{
+    navigate("/user");
   };
 
   const darkTheme = createTheme({
@@ -64,7 +69,10 @@ export const UserDb = () => {
         <ThemeProvider theme={darkTheme}>
           <AppBar position="static">
             <Toolbar>
-              <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}}>
+              <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}} onClick={Home} className="homeicon">
+                <HomeIcon/>
+              </Icon>
+              <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua',marginLeft:'20px'}}>
                 <CameraRollIcon />
               </Icon>
               <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
@@ -86,10 +94,12 @@ export const UserDb = () => {
         <Button  variant='contained' color="success"   onClick={tamil}>Tamil</Button>
         <Button  variant='contained' color="success"   onClick={kannada}>Kannada</Button>
         <Button  variant='contained' color="success"   onClick={malayalam}>Malayalam</Button>
-        <br/>
+
         <div className="table">
           <br />
           {movies.map((movie) => {
+            if(movie.language==="Tamil")
+            {
             return (
               <>
                 <div className="moviebox">
@@ -106,6 +116,7 @@ export const UserDb = () => {
                 </div>
               </>
             );
+            }
           })}
         </div>
       </div>

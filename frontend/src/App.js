@@ -7,8 +7,12 @@ import Edit from './Edit/Edit';
 import { States } from './States';
 import AddMovies from './AddMovies/AddMovies';
 import { Review } from './Review/Review';
+import { ViewReview } from './Review/ViewReview';
 import { Home } from './Home/Home';
 import { UserDb } from './UserDb/UserDb';
+import { Tamil } from './Tamil/Tamil';
+import { Kannada } from './Kannada/Kannada';
+import { Malayalam } from './Malayalam/Malayalam';
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
           <Route path="/add" element={<AddMovies/>}/>
           <Route path="/review" element={<Review/>}/>
           <Route path="/user" element={<UserDb/>}/>
+          <Route path="/viewreview" element={<ViewReview/>}/>
+          <Route path="/tamilmovies" element={<Tamil/>}/>
+          <Route path="/kannadamovies" element={<Kannada/>}/>
+          <Route path="/malayalammovies" element={<Malayalam/>}/>
         </Routes>
       </States>
       </BrowserRouter>

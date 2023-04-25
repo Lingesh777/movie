@@ -8,4 +8,5 @@ public interface ReviewServiceint {
 
 	public String postReview(ReviewEntity re);
 	public List<ReviewEntity> getReview();
+	// public List<ReviewEntity> getreviewmovie(String favmovie);
 }

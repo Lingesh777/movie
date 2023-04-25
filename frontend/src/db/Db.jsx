@@ -39,12 +39,13 @@ export const Db = () => {
     navigate("/add");
   };
   const Addreview = () => {
-    navigate("/review");
+    navigate("/viewreview");
   };
 
   const Logout = () => {
     navigate("/login");
   };
+  
 
   const darkTheme = createTheme({
     palette: {
@@ -168,29 +169,6 @@ export const Db = () => {
           {/* </table> */}
         </div>
       </div>
-      <div className="reviewbutton">
-        <Button
-          className="addrbutton"
-          variant="contained"
-          color="primary"
-          onClick={Addreview}
-        >
-          Add Review
-        </Button>
-        {/* </div>
-      <div className="addmoviebutton"> */}
-        <Button
-          className="addmbutton"
-          variant="contained"
-          color="success"
-          onClick={AddMovie}
-        >
-          Add Movie
-        </Button>
-      </div>
-      {/* <div style={{textAlign:'right',marginRight:'12%',paddingBottom:'3px',paddingTop:'8px'}}  onClick={()=>{Addreview()}}>
-       <button style={{color:'white',backgroundColor:'blue'}} className='reviewicon'>+ Add Review +</button>
-     </div> */}
     </div>
   );
 };

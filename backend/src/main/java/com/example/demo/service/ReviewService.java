@@ -23,5 +23,9 @@ public ReviewRepo rr;
 		return rr.findAll();
 	}
 
-	
+	// @Override
+	// public List<ReviewEntity> getreviewmovie(String favmovie)
+	// {
+	// 	return rr.findByMovieName(favmovie);
+	// }
 }
