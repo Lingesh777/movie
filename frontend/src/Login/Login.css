@@ -41,3 +41,16 @@
         padding: 30px;
         
     }
+
+    .formlogin{
+        animation-duration: 2s;
+        animation-name: slide1;
+      }
+      @keyframes slide1{
+        from {
+          margin-top: 0%;
+        }
+        to {
+          margin-top: 10%;
+        }
+      }

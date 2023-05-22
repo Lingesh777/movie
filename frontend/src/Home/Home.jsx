@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { Navigate, useNavigate } from "react-router-dom";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
+import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 import "./Home.css";
 
 export const Home = () => {
@@ -61,7 +62,7 @@ export const Home = () => {
         <img className="hm1" src="https://moviegalleri.net/wp-content/gallery/don-images/Don-Movie-Images-HD-06dcc7d.jpg"></img>
         <img className="hm1" src="https://m.media-amazon.com/images/M/MV5BMjU4MTRkZWItNzA2ZC00NjBiLThiYTgtM2E0Y2M5NGU0NTNhXkEyXkFqcGdeQXVyODEzOTQwNTY@._V1_.jpg"></img>
       </div>
-
+     
     </div>
   );
 };

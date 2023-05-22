@@ -69,3 +69,16 @@
         padding: 30px;
        
     }
+
+    .formsignup{
+        animation-duration: 2s;
+        animation-name: slide2;
+      }
+      @keyframes slide2{
+        from {
+          margin-left: 0%;
+        }
+        to {
+          margin-left: 27%;
+        }
+      }

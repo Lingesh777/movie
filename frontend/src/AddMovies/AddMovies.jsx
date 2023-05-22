@@ -40,8 +40,9 @@ const navigate=useNavigate();
         })
         .then((res)=>{
             console.log(res);
-        });
             getAllMovies();
+        });
+            //getAllMovies();
             navigate("/movie");
         }
     };

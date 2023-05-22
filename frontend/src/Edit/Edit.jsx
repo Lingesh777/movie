@@ -40,8 +40,9 @@ function Edit(){
         })
         .then((res)=>{
             console.log(res);
+            getAllMovies();
         });
-        getAllMovies();
+        // getAllMovies();
         navigate("/movie");
     };
 
