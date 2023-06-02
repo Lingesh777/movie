@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
  import "./UserDb.css";
-import {AppBar,Toolbar,Button,Stack,Icon,Typography,} from "@mui/material";
+import {AppBar,Toolbar,Button,Stack,Icon,Typography,Grid} from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useStates } from "../States";
@@ -83,9 +83,11 @@ export const UserDb = () => {
           </ThemeProvider>
         </div>
         <h3 style={{ textAlign: "center" }}>Movie Details</h3>
-        <Button  variant='contained' color="success"  className="language" onClick={tamil}>Tamil</Button>
-        <Button  variant='contained' color="success"   onClick={kannada}>Kannada</Button>
-        <Button  variant='contained' color="success"   onClick={malayalam}>Malayalam</Button>
+        <Grid container spacing={2}>
+        <Grid item><Button  variant='contained' color="success"  className="language1" onClick={tamil}>Tamil</Button></Grid>
+        <Grid item><Button  variant='contained' color="success"  className="language2" onClick={kannada}>Kannada</Button></Grid>
+        <Grid item><Button  variant='contained' color="success"  className="language3" onClick={malayalam}>Malayalam</Button></Grid>
+        </Grid>
         <br/>
         <div className="table">
           <br />

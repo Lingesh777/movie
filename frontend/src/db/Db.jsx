@@ -57,6 +57,7 @@ export const Db = () => {
   });
 
   return (
+    <div className="dbbody">
     <div className="tablebody">
       <ToastContainer
         position="top-center"
@@ -169,6 +170,7 @@ export const Db = () => {
           {/* </table> */}
         </div>
       </div>
+    </div>
     </div>
   );
 };

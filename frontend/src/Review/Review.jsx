@@ -13,28 +13,28 @@ export const Review = () => {
   const[rating,setRating]=useState("");
   const[yourcomments,setYourcomments]=useState("");
   const AddReview=()=>{
-    axios.post("http://localhost:8080/addreview",{
-          //  id:id,
-           favmovie:favmovie,
-           rating:rating,
-           yourcomments:yourcomments
-        })
-        .then((res)=>{
-            console.log(res);
-        });
-        if(favmovie===''||rating===''||yourcomments==='')
-        {
-            toast.error("Enter all fields");
+      if(favmovie===''||rating===''||yourcomments==='')
+      {
+          toast.error("Enter all fields");
         }
         else
         {
-            navigate("/movie");
+            axios.post("http://localhost:8080/addreview",{
+                  //  id:id,
+                   favmovie:favmovie,
+                   rating:rating,
+                   yourcomments:yourcomments
+                })
+                .then((res)=>{
+                    console.log(res);
+                });
+            navigate("/user");
         }
     };
     const navigate=useNavigate();
 
     const gotoDb =() =>{
-      navigate("/movie");
+      navigate("/user");
     }
   return (
     

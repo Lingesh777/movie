@@ -112,3 +112,8 @@
     margin-top: 25px;
     font-size: large;
 }
+.dbbody{
+    background: #bdc3c7;  
+    background: -webkit-linear-gradient(to right, #5092d3, #01101ae8); 
+    background: linear-gradient(to right, #333c44, #7ec8ec);
+}
