@@ -29,6 +29,11 @@ public class MovieController {
 	{
 		return ms.getDetails();
 	}
+	@GetMapping("/getmovie/{moviename}")
+	public List<MovieEntity> get(@PathVariable String moviename)
+	{
+		return ms.getDetails1(moviename);
+	}
 	
 	@PostMapping("/postmovie")
 	public String post(@RequestBody MovieEntity me)

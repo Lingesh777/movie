@@ -6,6 +6,8 @@ import { useStates } from '../States'
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
 import './Edit.css'
+import { toast,ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 function Edit(){
      const navigate=useNavigate();
      const[url,setUrl]=useState("");
@@ -42,8 +44,10 @@ function Edit(){
             console.log(res);
             getAllMovies();
         });
-        // getAllMovies();
-        navigate("/movie");
+        toast.success(moviename+" movie updated");
+            setTimeout(()=>{
+                navigate("/movie")
+            },2000);
     };
 
     const gotoDb=()=>{
@@ -52,6 +56,18 @@ function Edit(){
 
     return(
         <div className='editbody'>
+            <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         <div className="textfields">
         <div className="url">
                 <TextField
@@ -130,7 +146,7 @@ function Edit(){
                 <Button className="getbutton" variant='contained' color="error" onClick={gotoDb}>
                     Cancel
                 </Button>  
-                <Button  variant='contained' color="success"  onClick={()=>Moviedetails(editMovie.moviename)}>
+                <Button  variant='contained' color="success" className='editatedit' onClick={()=>Moviedetails(editMovie.moviename)}>
                     Update
                 </Button>
             </div>

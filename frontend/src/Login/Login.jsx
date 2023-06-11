@@ -44,7 +44,10 @@ const handleSubmit = (e) => {
       }
       else if(res.data==='Login Successful')
       {
-        navigate("/user")
+        toast.success("Login success");
+            setTimeout(()=>{
+                navigate("/user")
+            },2000);
       }
 
       else{

@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Navbar } from "./Navbar";
 
 
 export const UserDb = () => {
@@ -35,6 +36,9 @@ export const UserDb = () => {
   const malayalam = () => {
     navigate("/malayalammovies");
   };
+  const Viewreview=()=>{
+    navigate("/viewreviewuser");
+  }
 
   const darkTheme = createTheme({
     palette: {
@@ -70,9 +74,15 @@ export const UserDb = () => {
               <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
                 Movie spooky
               </Typography>
+              <div className="navatuser">
+              <Navbar/>
+              </div>
               <Stack direction="row" spacing={2}>
+              <Button color="inherit" onClick={Viewreview} style={{color:'aqua'}}>
+                 View Review
+                </Button>
                 <Button color="inherit" onClick={Addreview} style={{color:'aqua'}}>
-                  Review
+                  Add Review
                 </Button>
                 <Button color="inherit" onClick={Logout} style={{color:'aqua'}}>
                   Logout
@@ -83,11 +93,13 @@ export const UserDb = () => {
           </ThemeProvider>
         </div>
         <h3 style={{ textAlign: "center" }}>Movie Details</h3>
+        <div className="langatlang">
         <Grid container spacing={2}>
         <Grid item><Button  variant='contained' color="success"  className="language1" onClick={tamil}>Tamil</Button></Grid>
         <Grid item><Button  variant='contained' color="success"  className="language2" onClick={kannada}>Kannada</Button></Grid>
         <Grid item><Button  variant='contained' color="success"  className="language3" onClick={malayalam}>Malayalam</Button></Grid>
         </Grid>
+        </div>
         <br/>
         <div className="table">
           <br />

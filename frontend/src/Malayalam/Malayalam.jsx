@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import "./Db.css";
-import {AppBar,Toolbar,Button,Stack,Icon,Typography,} from "@mui/material";
+import {AppBar,Toolbar,Button,Stack,Icon,Typography,Grid} from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useStates } from "../States";
@@ -9,6 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import HomeIcon from '@mui/icons-material/Home';
+import { Navbar } from "../UserDb/Navbar";
 
 
 export const Malayalam = () => {
@@ -40,6 +41,9 @@ export const Malayalam = () => {
   const Home=()=>{
     navigate("/user")
   }
+const Viewreview=()=>{
+  navigate("/viewreviewuser")
+}
 
   const darkTheme = createTheme({
     palette: {
@@ -78,9 +82,15 @@ export const Malayalam = () => {
               <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
                 Movie spooky
               </Typography>
+              <div className="navatuser">
+              <Navbar/>
+              </div>
               <Stack direction="row" spacing={2}>
+              <Button color="inherit" onClick={Viewreview} style={{color:'aqua'}}>
+                 View Review
+                </Button>
                 <Button color="inherit" onClick={Addreview} style={{color:'aqua'}}>
-                  Review
+                  Add Review
                 </Button>
                 <Button color="inherit" onClick={Logout} style={{color:'aqua'}}>
                   Logout
@@ -91,9 +101,13 @@ export const Malayalam = () => {
           </ThemeProvider>
         </div>
         <h3 style={{ textAlign: "center" }}>Movie Details</h3>
-        <Button  variant='contained' color="success"   onClick={tamil}>Tamil</Button>
-        <Button  variant='contained' color="success"   onClick={kannada}>Kannada</Button>
-        <Button  variant='contained' color="success"   onClick={malayalam}>Malayalam</Button>
+        <div className="langatlang">
+        <Grid container spacing={2}>
+        <Grid item><Button  variant='contained' color="success"  className="language1" onClick={tamil}>Tamil</Button></Grid>
+        <Grid item><Button  variant='contained' color="success"  className="language2" onClick={kannada}>Kannada</Button></Grid>
+        <Grid item><Button  variant='contained'  className="language3" onClick={malayalam}>Malayalam</Button></Grid>
+        </Grid>
+        </div>
         <div className="table">
           <br />
           {movies.map((movie) => {

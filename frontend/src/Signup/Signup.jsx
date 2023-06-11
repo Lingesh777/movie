@@ -58,7 +58,10 @@ export default function Signup() {
           console.log(res.data);
           if(res.data==='signup success')
           {
-            navigate("/movie");
+            toast.success("Signup success");
+            setTimeout(()=>{
+                navigate("/user")
+            },2000);
           }
           else{
             toast.error(res.data);

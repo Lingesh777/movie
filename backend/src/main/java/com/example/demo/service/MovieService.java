@@ -17,6 +17,11 @@ public class MovieService implements MovieServiceInt {
 	public List<MovieEntity> getDetails() {
 		return mr.findAll();
 	}
+	
+	@Override
+	public List<MovieEntity> getDetails1(String moviename) {
+		return mr.findByMovienameContainingIgnoreCase(moviename);
+	}
 
 	@Override
 	public String postDetails(MovieEntity me) {

@@ -13,6 +13,7 @@ import { UserDb } from './UserDb/UserDb';
 import { Tamil } from './Tamil/Tamil';
 import { Kannada } from './Kannada/Kannada';
 import { Malayalam } from './Malayalam/Malayalam';
+import { Viewreviewuser } from './Review/Viewreviewuser';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/tamilmovies" element={<Tamil/>}/>
           <Route path="/kannadamovies" element={<Kannada/>}/>
           <Route path="/malayalammovies" element={<Malayalam/>}/>
+          <Route path="/viewreviewuser" element={<Viewreviewuser/>}/>
         </Routes>
       </States>
       </BrowserRouter>

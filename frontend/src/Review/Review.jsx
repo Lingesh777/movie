@@ -6,12 +6,16 @@ import { toast,ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
+import "./Review.css"
+import { useStates } from '../States';
+
 
 export const Review = () => {
   const[id,setId]=useState("");
   const[favmovie,setFavmovie]=useState("");
   const[rating,setRating]=useState("");
   const[yourcomments,setYourcomments]=useState("");
+  const{reviews,setReviews,getAllReviews}=useStates();
   const AddReview=()=>{
       if(favmovie===''||rating===''||yourcomments==='')
       {
@@ -27,8 +31,13 @@ export const Review = () => {
                 })
                 .then((res)=>{
                     console.log(res);
+                    getAllReviews();
                 });
-            navigate("/user");
+                toast.success("Review posted");
+                setTimeout(() => {
+                  
+                  navigate("/user");
+                }, 2000);
         }
     };
     const navigate=useNavigate();
@@ -51,6 +60,8 @@ export const Review = () => {
           pauseOnHover
           theme="dark"
         />
+        <div className='reviewatadd'>
+        <div className='rbody'>
         <div className='textfields'>
             <div className="Moviename">
                 <TextField
@@ -88,11 +99,13 @@ export const Review = () => {
                 <Button className="getbutton" variant='contained' color="error" onClick={gotoDb}>
                     Cancel
                 </Button>
-                <Button  variant='contained' color="success"   onClick={AddReview}>
+                <Button  variant='contained' color="success"  className='postatpost' onClick={AddReview}>
                     post
                 </Button>
              </div>   
             </div>
+            </div>
+    </div>
     </div>
   );
 };

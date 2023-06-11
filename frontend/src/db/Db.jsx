@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Navbar } from "../UserDb/Navbar";
 
 
 export const Db = () => {
@@ -82,6 +83,7 @@ export const Db = () => {
               <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
                 Movie spooky
               </Typography>
+              <Navbar/>
               <Stack direction="row" spacing={2}>
                 <Button color="inherit" onClick={AddMovie} style={{color:'aqua'}}>Add Movies</Button>
                 <Button color="inherit" onClick={Addreview} style={{color:'aqua'}}>

@@ -27,3 +27,8 @@
     align-items: center;
     justify-content: center;
     }
+
+    .editatedit{
+        position: relative;
+        left:5px;
+    }

@@ -1,0 +1,17 @@
+.postatpost{
+    position: relative;
+    left:5px;
+}
+/* .rbody{
+    margin-left: 25%;
+    margin-top: 10%;
+} */
+.reviewatadd{
+    background: #bdc3c7;  
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

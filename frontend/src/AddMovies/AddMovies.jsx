@@ -43,7 +43,11 @@ const navigate=useNavigate();
             getAllMovies();
         });
             //getAllMovies();
-            navigate("/movie");
+            toast.success(moviename+" added successful");
+    setTimeout(() => {
+      
+      navigate("/movie");
+    }, 2000);
         }
     };
     const gotoDb=()=>{
@@ -141,7 +145,7 @@ const navigate=useNavigate();
                 <Button className="getbutton" variant='contained' color="error" onClick={gotoDb}>
                     Cancel
                 </Button>
-                <Button  variant='contained' color="success"   onClick={()=>AddMoviedetails()}>
+                <Button  variant='contained' color="success"   onClick={()=>AddMoviedetails()} className="addatadd">
                     Add
                 </Button>
              </div>   
