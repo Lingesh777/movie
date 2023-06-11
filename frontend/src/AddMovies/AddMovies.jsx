@@ -43,7 +43,7 @@ const navigate=useNavigate();
             getAllMovies();
         });
             //getAllMovies();
-            toast.success(moviename+" added successful");
+            toast.success(moviename+" added successfully");
     setTimeout(() => {
       
       navigate("/movie");

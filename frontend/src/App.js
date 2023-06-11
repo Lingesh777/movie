@@ -14,6 +14,7 @@ import { Tamil } from './Tamil/Tamil';
 import { Kannada } from './Kannada/Kannada';
 import { Malayalam } from './Malayalam/Malayalam';
 import { Viewreviewuser } from './Review/Viewreviewuser';
+import { Telugu } from './Telugu/Telugu';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/kannadamovies" element={<Kannada/>}/>
           <Route path="/malayalammovies" element={<Malayalam/>}/>
           <Route path="/viewreviewuser" element={<Viewreviewuser/>}/>
+          <Route path="/telugu" element={<Telugu/>}/>
         </Routes>
       </States>
       </BrowserRouter>

@@ -79,11 +79,11 @@ export const Review = () => {
                     id='outlined-basic'
                     label='Rating'
                     variant='outlined'
-                    onKeyPress={(event)=>{
-                        if(!/[0-9]/.test(event.key)){
-                            event.preventDefault();
-                        }
-                    }}
+                    // onKeyPress={(event)=>{
+                    //     if(!/[0-9]/.test(event.key)){
+                    //         event.preventDefault();
+                    //     }
+                    // }}
                 />
             </div>
             <div className="Actress">

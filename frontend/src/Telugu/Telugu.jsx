@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
- import "./UserDb.css";
 import {AppBar,Toolbar,Button,Stack,Icon,Typography,Grid} from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -8,10 +7,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Navbar } from "./Navbar";
+import HomeIcon from '@mui/icons-material/Home';
+import { Navbar } from "../UserDb/Navbar";
 
 
-export const UserDb = () => {
+export const Telugu = () => {
   const { editMovie, setEditMovie, movies, setMovies, getAllMovies } =
     useStates();
   const navigate = useNavigate();
@@ -27,6 +27,7 @@ export const UserDb = () => {
   const Logout = () => {
     navigate("/login");
   };
+
   const tamil = () => {
     navigate("/tamilmovies");
   };
@@ -36,11 +37,14 @@ export const UserDb = () => {
   const malayalam = () => {
     navigate("/malayalammovies");
   };
-  const Viewreview=()=>{
-    navigate("/viewreviewuser");
-  }
   const telugu=()=>{
     navigate("/telugu")
+  }
+  const Home =()=>{
+    navigate("/user");
+  };
+  const Viewreview=()=>{
+    navigate("/viewreviewuser")
   }
 
   const darkTheme = createTheme({
@@ -71,7 +75,10 @@ export const UserDb = () => {
         <ThemeProvider theme={darkTheme}>
           <AppBar position="static">
             <Toolbar>
-              <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}}>
+              <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}} onClick={Home} className="homeicon">
+                <HomeIcon/>
+              </Icon>
+              <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua',marginLeft:'20px'}}>
                 <CameraRollIcon />
               </Icon>
               <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
@@ -98,16 +105,18 @@ export const UserDb = () => {
         <h3 style={{ textAlign: "center" }}>Movie Details</h3>
         <div className="langatlang">
         <Grid container spacing={2}>
-        <Grid item><Button  variant='contained' color="success"  className="language1" onClick={tamil}>Tamil</Button></Grid>
-        <Grid item><Button  variant='contained' color="success"  className="language3" onClick={malayalam}>Malayalam</Button></Grid>
+        <Grid item><Button  variant='contained' color="success" className="language1" onClick={tamil}>Tamil</Button></Grid>
         <Grid item><Button  variant='contained' color="success"  className="language2" onClick={kannada}>Kannada</Button></Grid>
-        <Grid item><Button  variant='contained' color="success"  className="language2" onClick={telugu}>Telugu</Button></Grid>
+        <Grid item><Button  variant='contained' color="success"  className="language3" onClick={malayalam}>Malayalam</Button></Grid>
+        <Grid item><Button  variant='contained'  className="language3" onClick={telugu}>Telugu</Button></Grid>
         </Grid>
         </div>
-        <br/>
+
         <div className="table">
           <br />
           {movies.map((movie) => {
+            if(movie.language==="Telugu")
+            {
             return (
               <>
                 <div className="moviebox">
@@ -124,6 +133,7 @@ export const UserDb = () => {
                 </div>
               </>
             );
+            }
           })}
         </div>
       </div>

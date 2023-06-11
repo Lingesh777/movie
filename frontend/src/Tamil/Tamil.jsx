@@ -44,6 +44,9 @@ export const Tamil = () => {
   const Viewreview=()=>{
     navigate("/viewreviewuser")
   }
+  const telugu=()=>{
+    navigate("/telugu")
+  }
 
   const darkTheme = createTheme({
     palette: {
@@ -106,6 +109,7 @@ export const Tamil = () => {
         <Grid item><Button  variant='contained'  className="language1" onClick={tamil}>Tamil</Button></Grid>
         <Grid item><Button  variant='contained' color="success"  className="language2" onClick={kannada}>Kannada</Button></Grid>
         <Grid item><Button  variant='contained' color="success"  className="language3" onClick={malayalam}>Malayalam</Button></Grid>
+        <Grid item><Button  variant='contained' color="success"  className="language3" onClick={telugu}>Telugu</Button></Grid>
         </Grid>
         </div>
 
